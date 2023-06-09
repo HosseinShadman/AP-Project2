@@ -32,6 +32,7 @@
                         <span style="text-align: center; font-weight: bold; ">{{i["price"]}} تومان</span><br></br>
                         <span style="text-align: center; font-weight: bold; ">{{r(i["price"]/dollar,2)}} $</span>
                         <form action="{{url_for('aded')}}" method="post"><input name="name" type="hidden" value="{{i['name']}}"><input type="submit" value="add" name="add" ></form>
+                        <form action="{{url_for('delete')}}" method="post"><input name="name" type="hidden" value="{{i['name']}}"><input type="submit" value="delet" name="delet" ></form>
                      </div>
                      {%endfor%}
                   </div>

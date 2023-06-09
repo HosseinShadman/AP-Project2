@@ -39,7 +39,18 @@ def aded():
     product=l[find_name(l, name)]
     l_cart.append(product)
     return render_template("index3.html",products=l,dollar=dollar,r=round)
-
+@app.route('/deleted',methods=['POST'])
+def delete():
+    name=request.form['name']
+    product=l[find_name(l, name)]
+    l.remove(product)
+    return render_template("index3.html",products=l,dollar=dollar,r=round)
+@app.route('/deleted from cart', methods=['POST'])
+def delete_cart():
+    name=request.form['name']
+    product=l[find_name(l, name)]
+    l_cart.remove(product)
+    return render_template("shop cart3 .html",cart=l_cart,products=l,dollar=dollar,r=round)
 
 
 app.run()
