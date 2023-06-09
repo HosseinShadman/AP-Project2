@@ -1,5 +1,5 @@
 <!doctype html>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="style.css" xmlns="http://www.w3.org/1999/html"/>
 <html>
    <head>
       <meta charset="utf-8">
@@ -13,7 +13,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-6">
-                     <a href="#" class="mybtn"><i class="fa fa-cart-arrow-down"></i>Cart</a>
+                     <a href="{{ url_for('Cart') }}" class="mybtn"><i class="fa fa-cart-arrow-down"></i>Cart</a>
                   </div>
                </div>  
       <!----------------------------------> 
@@ -29,7 +29,9 @@
                            <a href=""><img src={{i["link"]}} style="width: 90px; height: 90px; float: inherit; margin: 10px 10px;" class="w-100" /></a>
                         </figure>
                         <h5>{{i["name"]}}</h5>
-                        <span style="text-align: center; font-weight: bold; ">{{i["price"]}}</span>
+                        <span style="text-align: center; font-weight: bold; ">{{i["price"]}} تومان</span><br></br>
+                        <span style="text-align: center; font-weight: bold; ">{{r(i["price"]/dollar,2)}} $</span>
+                        <input type="submit" value="add"name="add" >
                      </div>
                      {%endfor%}
                   </div>
