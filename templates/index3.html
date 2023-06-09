@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>mobile Shop</title>
+
+
+
+   </head>
+   <body>   
+      <div class="top2">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                     <a href="#" class="mybtn"><i class="fa fa-cart-arrow-down"></i>Cart</a>
+                  </div>
+               </div>  
+      <!----------------------------------> 
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="two-slider">
+                  
+                  <div class="owl-carousel owl-theme ov2">
+                     {%for i in products %}
+                     <div class="item">
+                        <figure>
+                           <a href=""><img src={{i["link"]}} class="w-100" /></a>
+                        </figure>
+                        <h5>{{i["name"]}}</h5>
+                        <span>{{i["price"]}}</span>
+                     </div>
+                     {%endfor%}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>  
+      <!---------------------------------->
+   </body>
+</html>
