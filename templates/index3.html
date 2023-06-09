@@ -1,4 +1,5 @@
 <!doctype html>
+<link rel="stylesheet" type="text/css" href="style.css" />
 <html>
    <head>
       <meta charset="utf-8">
@@ -23,12 +24,12 @@
                   
                   <div class="owl-carousel owl-theme ov2">
                      {%for i in products %}
-                     <div class="item">
+                     <div class="item" style="width: fit-content ; background-color: white; text-align: center; border-style: ridge; border-radius: 10px; border-color: black; border-width: 6px; margin: 5px 5px;  box-shadow: 2px 2px lightgray; float: left;">
                         <figure>
-                           <a href=""><img src={{i["link"]}} class="w-100" /></a>
+                           <a href=""><img src={{i["link"]}} style="width: 90px; height: 90px; float: inherit; margin: 10px 10px;" class="w-100" /></a>
                         </figure>
                         <h5>{{i["name"]}}</h5>
-                        <span>{{i["price"]}}</span>
+                        <span style="text-align: center; font-weight: bold; ">{{i["price"]}}</span>
                      </div>
                      {%endfor%}
                   </div>
