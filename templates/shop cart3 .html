@@ -19,6 +19,18 @@
    </body>
       <form>
          <input type="text">
-
       </form>
+                  <div class="owl-carousel owl-theme ov2">
+                     {%for i in cart %}
+                     <div class="item" style="width: fit-content ; background-color: white; text-align: center; border-style: ridge; border-radius: 10px; border-color: black; border-width: 6px; margin: 5px 5px;  box-shadow: 2px 2px lightgray; float: left;">
+                        <figure>
+                           <a href=""><img src={{i["link"]}} style="width: 90px; height: 90px; float: inherit; margin: 10px 10px;" class="w-100" /></a>
+                        </figure>
+                        <h5>{{i["name"]}}</h5>
+                        <span style="text-align: center; font-weight: bold; ">{{i["price"]}} تومان</span><br></br>
+                        <span style="text-align: center; font-weight: bold; ">{{r(i["price"]/dollar,2)}} $</span>
+                        <form action="{{url_for('aded')}}" method="post"><input name="name" type="hidden" value="{{i['name']}}"><input type="submit" value="add" name="add" ></form>
+                     </div>
+                     {%endfor%}
+                  </div>
 </html>
